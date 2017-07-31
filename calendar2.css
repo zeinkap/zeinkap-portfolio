@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Lato');
+
+* {
+	box-sizing: border-box;
+}
+
+ul {
+	list-style: none;
+}
+body {
+	font-family: "Oswald", sans-serif;
+}
+.navbar {
+	text-align: center;
+	background-color: grey;
+}
+.navbar button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 8px 16px;
+	margin: 10px 5px;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 18px;
+	font-family: "Open Sans", sans-serif;
+	display: inline-block;
+	text-transform: uppercase;
+}
+button:hover {
+	background-color: #3e8e41;
+	cursor: pointer;
+}
+button:active {
+	background-color: #3e8e41;
+	box-shadow: 2px 2px #666;
+  	transform: translateY(2px);
+}
+.icon-bar {
+	width: 100%;
+	position: absolute;
+	display: block;
+}
+.icon-bar a {
+	color: white;
+	font-size: 35px;
+	float: right;
+	margin-right: 20px;	
+}
+.icon-bar a:hover {
+	background-color: #3e8e41;
+	padding: 5px 10px;
+}
+.month {
+	width: 100%;
+	padding: 40px 25px;
+	background-color: #1abc9c;
+}
+.month ul {
+	padding: 0;
+	margin: 0;
+}
+.month li {
+	color: white;
+	font-size: 30px;
+	font-family: "Lato", sans-serif;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+/*I changed the # */
+.prev {
+	float: left;
+	padding-top: 10px;
+	cursor: pointer;
+}
+.next {
+	float: right;
+	padding-top: 10px;
+	cursor: pointer;
+}
+.days {
+	margin: 0;
+	padding: 10px 0;
+    background-color:#ddd;
+	font-size: 20px;
+}
+.days li {
+	display: inline-block;
+	text-align: center;
+	width: 13%;
+}
+.dates {
+	font-size: 20px;
+	padding-top: 1px;
+	background-color: #eee;
+}
+.dates li {
+	display: inline-block;
+	width: 13%;
+	text-align: center;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+.dates li:hover {
+	background-color: #1abc9c;
+	cursor: pointer;
+}
+.winter {
+	background-image: url("https://ak6.picdn.net/shutterstock/videos/1777091/thumb/1.jpg");
+}
+.spring {
+	background-image: url("http://wallpapercave.com/wp/exAcvdU.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+}
+.summer {
+	background-image: url("http://project4gallery.com/wp-content/uploads/2016/03/1362021612846-2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+}
+.fall {
+	background-image: url("https://images8.alphacoders.com/583/thumb-1920-583853.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+}
+footer {
+	float: right;
+	font-size: 11px;
+}
+a {
+	text-decoration: none;
+	color: orange;
+}
