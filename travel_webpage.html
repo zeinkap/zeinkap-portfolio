@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Travel Webpage</title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Cormorant+Upright|Metal+Mania|Ubuntu');
+		body {
+			background-image: url(https://images5.alphacoders.com/387/387334.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			color: white;
+		}
+		p {
+			font-size: 18px;
+			font-family: arial;
+			font-style: italic;
+			text-align: left;
+			padding-right: 300px;
+
+		}
+		table, th, td {
+			border: 1px solid orange;
+			border-image: 
+
+		}
+		div {
+			float: left;
+		}
+		th {
+			text-align: center;
+		}
+		h1 {
+			color: yellow;
+			text-shadow: 1px 1px red;
+			text-decoration: underline black;
+		}
+		ul {
+			list-style: none;
+		}
+		li {
+			font-size: 30px;
+			font-family: Ubuntu;
+			color: orange;
+			text-decoration: underline brown;
+			text-align: left;
+			
+		}
+		img {
+			width: 1000px;
+			height: 450px;
+			border: 0.5px solid transparent;
+			padding: 5px;
+   			background-color: white;
+		}
+		/* Style Slide Show */
+		* {box-sizing:border-box}
+
+		.slideshow-container {
+			 max-width: 1000px;
+			 position: relative;
+			 margin: auto;
+		}
+		.mySlides {
+    		display: none;
+		}
+		.prev, .next {
+			  cursor: pointer;
+			  position: absolute;
+			  top: 50%;
+			  width: auto;
+			  margin-top: -22px;
+			  padding: 16px;
+			  color: white;
+			  font-weight: bold;
+			  font-size: 18px;
+			  transition: 0.6s ease;
+			  border-radius: 0 3px 3px 0;
+		}
+		/* Position the "next button" to the right */
+		.next {
+			 right: 0;
+			 border-radius: 3px 0 0 3px;
+		}
+		.prev {
+			left: 0;
+			border-radius: 3px 0 0 3px;
+		}
+		.prev:hover, .next:hover {
+  			 background-color: rgba(0,0,0,0.8);
+		}
+		/* Caption text */
+		.text {
+			 color: #f2f2f2;
+			 font-size: 15px;
+			 padding: 8px 12px;
+			 position: absolute;
+			 bottom: 8px;
+			 width: 100%;
+			 text-align: center;
+		}
+		/* Number text (1/3 etc) */
+		.numbertext {
+			 color: #f2f2f2;
+			 font-size: 12px;
+			 padding: 8px 12px;
+			 position: absolute;
+			 top: 0;
+		}
+		/* The dots/bullets/indicators */
+		.dot {
+			 cursor:pointer;
+			 height: 13px;
+			 width: 13px;
+			 background-color: #bbb;
+			 border-radius: 50%;
+			 display: inline-block;
+			 transition: background-color 0.6s ease;
+			 margin-top: 450px;
+		}
+		.active, .dot:hover {
+  			 background-color: #717171;
+		}
+		/* Fading animation */
+		.fade {
+			  -webkit-animation-name: fade;
+			  -webkit-animation-duration: 1.5s;
+			  animation-name: fade;
+			  animation-duration: 1.5s;
+		}
+		@-webkit-keyframes fade {
+			  from {opacity: .4} 
+			  to {opacity: 1}
+		}
+		@keyframes fade {
+			  from {opacity: .4} 
+			  to {opacity: 1}
+		}
+		h2 {
+			font-family: Metal Mania;
+			color: red;
+			text-shadow: 1px 1px white;
+		}
+		.centertd {
+			text-align: center;
+		}
+		#travel-header {
+			font-family: arial;
+			font-size: 26px;
+			text-decoration: underline red;
+		}
+		#desat {
+			cursor: pointer;
+		}
+		span {
+			color: red;
+		}
+
+	</style>
+</head>
+<body>
+
+<div>
+<h1 style="text-align: left">TOP 5 BUDGET-FRIENDLY TRAVEL DESTINATIONS</h1>
+	<p>There are many places we all wish to go. It could be France, Italy, Spain, Switzerland or maybe Mars. However, a tiny portion of us are able to come up with a feasible budget to fund our trips. Here are a list of places that won't <em>completely</em> wipe your bank account:</p>
+	</div>
+	<div>
+	<ul>
+	<!-- Thailand Slides-->
+		<div class="slideshow-container">
+			<div class="mySlides fade">
+				<div class="numbertext">1 / 3</div>
+				<img src="http://images.kuoni.co.uk/73/thailand-40160182-1482924456-ImageGalleryLightboxLarge.jpg" style="width:100%">
+				<div class="text">Thailand</div>
+				</div>
+			<div class="mySlides fade">
+				<div class="numbertext">2 / 3</div>
+				<img src="http://www.intrepidtravel.com/sites/intrepid/files/styles/low-quality/public/elements/product/hero/thailand_sukhothai_historical-park-1100.jpg" style="width:100%">
+				<div class="text">Thailand</div>
+				</div>
+			<div class="mySlides fade">
+				<div class="numbertext">3 / 3</div>
+				<img src="http://images.kuoni.co.uk/73/thailand-40155070-1482924456-ImageGalleryLightboxLarge.jpg" style="width:100%"	>
+				<div class="text">Thailand</div>
+				</div>
+
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+  		</div>
+  		<br>
+  		<div style="text-align: left">
+				<span class="dot" onclick="currentSlide(1)"></span> 
+				<span class="dot" onclick="currentSlide(2)"></span> 
+				<span class="dot" onclick="currentSlide(3)"></span> 
+		</div>
+		
+		<div>
+			<li>1. Thailand</li>
+			<p>Of course, not everywhere is cheap. Koh Samui and Phuket are heavy on luxury resorts, Ao Nang and Railey Beach are creeping up the price range (budget travellers have moved to Ton Sai beach), and Koh Phi Phi has arguably jumped the shark (try Koh Lanta or Koh Chang). But the further away you get from the most commercialised beaches, the better it gets. Head all the way north to the Chiang Mai region and you’ll be in budget travel heaven. Here amid the rice fields, Buddhist temples and hill tribes you can find some of the best-value accommodation anywhere—whether you’re looking for a backpacker bed (from $5) or a comfy hotel with swimming pool (from $30).</p>
+		</div>
+		<!--South Africa slides-->
+		<div>
+			<button onclick="document.getElementById('sapic').src='http://www.namastesouthafrica.com/wp-content/uploads/2015/09/Grand-tour-of-South-Africa.jpg'">Previous
+			</button>
+			<img id="sapic" src="http://aiesec.az/wp-content/uploads/2016/10/1I1-1500x935.jpg">
+			<button onclick="document.getElementById('sapic').src='https://i.ytimg.com/vi/regBwqZuCn4/maxresdefault.jpg'">Next</button>
+		</div>		
+		<div>
+			<li>2. South Africa</li>
+			<p>Even if it isn’t this list’s cheapest country in absolute terms, South Africa will give you excellent value for money in 2017. Compared to 2012, you can get almost double the amount of South African rand against many Western currencies. Day-to-day travel costs such as lodging and food are surprisingly low for a developed country. You’ll probably end up spending on a dazzling menu of adventure activities instead, which includes safaris, canopy tours, shark diving, caving and, hey, even ostrich riding (yep!).</p>
+		</div>
+		<!--Indonesia Slides-->
+		<div>
+		<button onclick="document.getElementById('indopic').src='http://202.72.206.26:8080/assets/img/destinations/photos/Nx488ximg6.jpg.pagespeed.ic.q9SnB-dB8l.jpg'">Previous
+		</button>
+		<img id="indopic" src="https://images.arcadis.com/media/F/0/2/%7BF027BDFE-5B8D-438E-B34C-B6DD883764AF%7DIndonesia.jpg?width=1920&height=0&mode=crop&anchor=top">
+		<button onclick="document.getElementById('indopic').src='http://aiesec.az/wp-content/uploads/2016/10/1I1-1500x935.jpg'">Next</button>
+		</div>		
+		<div>
+			<li>3. Indonesia</li>
+			<p>With 17,000 islands, you are bound to find the ideal paradise to suit your travel style and budget in Indonesia. There are stunning untouched beaches that offer world-class snorkelling and scuba diving in Raja Ampat, fascinating Unesco World Heritage Sites dating back to the 9th century in Yogyakarta and — everywhere you turn — the friendliest locals. In Raja Ampat, we found a homestay that included breakfast, lunch and dinner —plus it was right on the beach for around $29 USD per person per night.</p>
+		</div>
+		<!--morocco slides-->
+		<div>
+			<button onclick="document.getElementById('mopic').src='https://static.gate1travel.com/shared/morocco/headers/header-morocco.jpg'">Previous
+			</button>
+			<img id="mopic" src="http://www.nationsonline.org/gallery/Morocco/Ait-Benhaddou-Morocco.jpg">
+			<button onclick="document.getElementById('mopic').src='https://dxnews.com/upload/images/Morocco-CN2BGB-Tourist.jpg'">Next</button>
+		</div>
+		<div>
+			<li>4. Morocco</li>
+			<p>For many, Morocco is the ultimate dream trip, and yet cost tends to keep most from visiting. But what you might not know is that it's one of the most affordable African countries, particularly when comparing flight costs. Reaching Marrakech from cities such as Lisbon, Madrid and Paris may onlyset you back $40 to $100 roundtrip with many budget airlines. And this past Black Friday, flights from New York were a mere $400 roundtrip. Foodis by far my main reason for visiting as often as I do, and typical meals can range from $2.50 to $15 for two, which includes appetizers, entree andunlimited mint tea. For vegetarians and vegans, the country is especially great, as veggies are cheaper than meat and fresh fruit smoothies are barely $1. Souvenir shopping can get a bit intense when you realize leather goods such as wallets, handbags and weekenders run from $5 to $60.</p>
+		</div>
+		<!--malaysia slides-->
+		<div>
+			<button onclick="document.getElementById('malaypic').src='http://5u241180u9h1mng2942uyq7a.wpengine.netdna-cdn.com/wp-content/uploads/2016/04/MALACCA-STRAITS-MOSQUE.jpg'">Previous</button>
+			<img id="malaypic" src="https://www.azamaraclubcruises.com/sites/default/files/heros/port-klang-malaysia.jpg">
+			<button onclick="document.getElementById('malaypic').src='http://www.thomascook.in/tcportal/honeymoon-destinations/images/malaysia_banner.jpg'">Next</button>
+		</div>
+		<div>
+			<li>5. Malaysia</li>
+			<p>Offers a lot of bang for your buck. There are plenty of fun activities and attractions for the whole family such as Legoland (our kids’ favorite), water parks, indoor theme parks, tropical beaches and cultural icons like Batu Caves. Traveling via air within the country is ultra cheap thanks to AirAsia. A round-trip flight from the capital, Kuala Lumpur, to the beautiful island of Langkawi can cost as little as US$33. English is widely spoken, local food is cheap and delicious and the weather is warm all year round.</p>
+		</div>
+		<div>
+			<!--testing click swap-->
+			<img id="desat" onclick="swapImage('desat','https://www.azamaraclubcruises.com/sites/default/files/heros/port-klang-malaysia.jpg','http://www.thomascook.in/tcportal/honeymoon-destinations/images/malaysia_banner.jpg')" src="https://www.azamaraclubcruises.com/sites/default/files/heros/port-klang-malaysia.jpg">
+			<p>Click image to toggle.</p>
+		</div>
+		
+	</ul>
+	</div>
+
+	<br>
+	<br>
+	<p id="travel-header">Request A Free Travel Guide</p>
+	<form style="margin-right: 1250px">
+		First Name <span>*</span><br><input type="text" name="firstName" required><br>
+		Last Name <span>*</span><br><input type="text" name="lastName" required><br>
+		Address <span>*</span><br><input type="text" name="address" required><br>
+		Address Line 2<br><input type="text" name="address"><br>
+		Apt # <br><input type="text" name="address"><br>
+		City <span>*</span><br><input type="text" name="address" required><br>
+		State <span>*</span><br><input type="text" name="address" required><br>
+		Zip <span>*</span><br><input type="text" name="address" required><br>
+		E-mail Address <br><input type="text" name="email"><br>
+		<br><button type="submit" onclick="submitFunction()">Submit</button>
+	</form>
+
+	<br>
+	<br>
+	<br>
+
+<hr>
+
+<h1>Top 5 Animated Films</h1>
+	<h2>Anime Reviews</h2>
+<table>
+	<tr>
+		<th>NAME</th>
+		<th>GENRE</th>
+		<th>IMDb Rating</th>
+	</tr>
+	<tr>
+		<td>Spirited Away</td>
+		<td>Adventure/Family</td>
+		<td class="centertd">8.6</td>
+	</tr>
+	<tr>
+		<td>Kimi no na wa</td>
+		<td>Drama/Fantasy</td>
+		<td class="centertd">8.6</td>
+	</tr>
+	<tr>
+		<td>Up</td>
+		<td>Adventure/Comedy</td>
+		<td class="centertd">8.3</td>
+	</tr>
+	<tr>
+		<td>Finding Nemo</td>
+		<td>Adventure/Comedy</td>
+		<td class="centertd">8.1</td>
+	</tr>
+	<tr>
+		<td>The Lion King</td>
+		<td>Adventure/Drama</td>
+		<td class="centertd">8.5</td>
+	</tr>
+
+</table>
+<br>
+<br>
+
+<p>Find the average IMDb rating for 3 of your favorite movies:</p>
+<input id="firstnum" type="text" name="avg"  placeholder="First Rating">
+<input id="secondnum" type="text" name="avg" placeholder="Second Rating">
+<input id="thirdnum" type="text" name="avg" placeholder="Third Rating">
+<br>
+<br>
+<button onclick="calculateAverage()">Calculate Average</button>
+<p id="abc"></p>
+
+<footer style="float: right">&copy; Zein Kapadia</footer>
+
+<!-- JavaScript Code Starts Here-->
+<script type="text/javascript">
+function calculateAverage() {
+	var num1 = document.getElementById("firstnum").value;
+	var num2 = document.getElementById("secondnum").value;
+	var num3 = document.getElementById("thirdnum").value;
+	var avg = (parseInt(num1) + parseInt(num2) + parseInt(num3)) / 3;
+	document.getElementById('abc').innerHTML = "The average rating is " + avg + "." + " You must be very bored to waste your life on useless calculations.";
+}
+
+function submitFunction() {
+	alert("Thank you. Your request has been submitted.");
+}
+
+//slidshow
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1} 
+    slides[slideIndex-1].style.display = "block"; 
+    setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+
+
+//testing click image swap
+  function swapImage(desat,primary,secondary) {
+    src=document.getElementById(desat).src;
+    if (src.match(primary)) {
+      document.getElementById(desat).src=secondary;
+    } else {
+      document.getElementById(desat).src=primary;
+    }
+  }
+
+/*
+function getUserChoice() {
+	var userInput = prompt('Welcome! Please type the country you would like to travel to: thailand, south africa, indonesia, morocco or malaysia');
+	userInput = userInput.toLowerCase();
+	if (userInput === 'thailand' || userInput === 'south africa' || userInput === 'indonesia' || userInput === 'morocco' || userInput === 'malaysia') {
+    return userInput; 
+	} else {
+	  alert('Please enter a valid country from the list');
+	}
+}
+*/
+
+</script>
+</body>
+</html>
