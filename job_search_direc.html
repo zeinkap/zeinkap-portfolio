@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Job Board</title>
+	<meta charset="utf-8">
+	<!--To give responsiveness to mobile devices-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Bootstrap library-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!--jQuery library-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<style type="text/css">
+	.nav-bar {
+      font-family: arial;
+      text-align: center;
+    }
+    .nav-buttons {
+      background-color: #3FAABF;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      padding: 6px 4px;
+    }
+    .nav-buttons:active {
+      box-shadow: 2px 2px #666;
+      transform: translateY(2px);
+    }
+	.printbutton {
+  			visibility: hidden;
+  			display: none;
+  	}
+	</style>
+
+</head>
+<body>
+<header>
+    <div class="nav-bar">
+        <button id="navigateHome" class="nav-buttons">Home</button>
+    </div>
+</header>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-10">
+			<h2 class="text-primary text-center">SAMPLE NY Tech Job Listings</h2>
+		</div>
+		<div class="col-md-2">
+	<img src="https://www.jetblue.com/img/vacations/destination/NewYorkSkyline_960x420.jpg" class="img-circle img-responsive" alt="New York City Skyline"  width="160" height="160">
+		</div>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-striped table-bordered table-hover table-condensed">
+			<thead>
+				<tr>
+					<th>Job Title</th>
+					<th>Salary/Wage</th>
+					<th>Job Type</th>
+					<th>Location</th>
+					<th>Experience Level</th>
+					<th>Post Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Webmaster</td>
+					<td>$16/hr</td>
+					<td>Full-time</td>
+					<td>New York, NY</td>
+					<td>Entry-level</td>
+					<td>07/13/17</td>
+				</tr>
+				<tr>
+					<td>Manual tester</td>
+					<td>$16/hr</td>
+					<td>Part-time</td>
+					<td>Lynbrook, NY</td>
+					<td>Entry-level</td>
+					<td>07/10/17</td>
+				</tr>
+				<tr class="success">
+					<td>QA tester</td>
+					<td>$35,000</td>
+					<td>Full-time</td>
+					<td>Queens, NY</td>
+					<td>Entry-level</td>
+					<td>07/09/17</td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="text-right"><input type="button" onClick="window.print()" value="Print" class="btn btn-success btn-md"></p>
+	</div>
+
+<script>
+document.getElementById('navigateHome').onclick = function goHome() {
+  location.href = "zein_portfolio.html";
+
+//Print button
+document.write("<input type='button' " + "onClick='window.print()' " + "class='printbutton' " + "value='Print This Page'/>");
+</script>
+
+</body>
+</html>
