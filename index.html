@@ -12,7 +12,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
 	<style type="text/css">
-		@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Lobster|Lato');
+		@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Lobster|Lato|Orbitron');
 
 		body {
 			font-family: 'Montserrat', sans-serif;
@@ -40,6 +40,12 @@
 		p {
 			font-size: 18px;
 		}
+		.span1 {
+			text-transform: uppercase;
+			font-family: orbitron;
+			font-weight: bold;
+			letter-spacing: 3px;
+		}
 		.bg-style1 { 
       		background-color: #1abc9c; /* Teal */
       		color: #ffffff;
@@ -55,6 +61,12 @@
   		 .bg-style6 { 
       		background-color: #2f2f2f; /* Black Gray */
       		color: #fff;
+  		}
+  		#bg-galstyle {
+  			background-image: url("https://www.clipartsgram.com/image/668518014-abstraction-rose-design-ppt-backgrounds-powerpoint.jpg");
+  			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
   		}
 		#demo {
 			display: none;
@@ -121,13 +133,13 @@
 	</div>
 
 	<div class="container-fluid text-center bg-style1">
-	  <h2 class="margin">Who is Zein Kap?</h2>
+	  <h2 class="margin"><span class="span1">Who</span> is Zein Kap?</h2>
 	  <img src="me_face_back.jpg" class="img-responsive img-circle margin" style="display:inline;width: 300px;height: 300px;" alt="back pic of Zen-Master">
 	  <h3>Front-End Developer and QA tester<h3>
 	</div>
 
-	<div class="container-fluid text-center bg-style2">
-	  <h2 class="margin">What makes him special?</h2>
+	<div class="container-fluid text-center">
+	  <h2 class="margin"><span class="span1">What</span> makes him special?</h2>
 		<p class="text-justify">A forensic scientist turned developer. How often do you hear of that? Now that I have your attention. Here is what you may  know about him: </p>
 		<br>
 		<p class="text-justify">
@@ -136,7 +148,7 @@
 	
 	</div>
 
-	<div class="container-fluid text-center bg-style3">
+	<div class="container-fluid text-center bg-style2">
 	<div class="page-header">
 		<h2 id="flip">SKILLS (click to view)</h2>
 	</div>
@@ -167,7 +179,7 @@
 	</div>
 	</div>
 
-	<div class="container-fluid text-center bg-style1">
+	<div class="container-fluid text-center bg-style3">
 	<div class="page-header" id="portfolio">
 	  <h2>PORTFOLIO</h2>
 	  <p>Some of my work</p>
@@ -204,7 +216,7 @@
 	
 	</div>	
 
-
+  <div class="container-fluid" id="bg-galstyle">
 	<div class="container text-center" id="gallery">
 	<div class="page-header">
 		<h2>Gallery</h2>
@@ -247,7 +259,7 @@
 			</div>
 		</div>
 	</div>
-	
+  
 	 <!-- Left and right controls -->
 	 <a class="left carousel-control" href="#myCarousel" data-slide="prev">
 	 	<span class="glyphicon glyphicon-chevron-left"></span>
@@ -260,7 +272,7 @@
 
 	</div>
 	</div>
-
+  </div>
 	<!--
 	<div class="page-header" id="contact">
 		<a href="mailto:zeinkap@gmail.com?Subject=Hello%20again" target="_top"><h2 class="text-center"><u>Contact Zen-Master</u></h2></a>
