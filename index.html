@@ -31,7 +31,7 @@
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
-			height: 600px;
+			height: 610px;
 		}
 		#home-title {
 			color: white;
@@ -42,6 +42,10 @@
 		}
 		blockquote {
 			font-family: cursive;
+		}
+		#overlay {
+			position: absolute;
+			z-index: 2;
 		}
 		.bottom-footer {
 			float: right;
@@ -97,12 +101,42 @@
 	</style>
 
 	<script>
+	//sliding toggle for Skills section
 	$(document).ready(function() {
 		$("#flip").click(function() {
 			$("#demo").slideToggle("slow");
 		});
 	});
 	
+	//add smooth scrolling to projects
+	$(document).ready(function() {
+		$("#goToProjects").on('click', function(event) {
+			if(this.hash !== "#goToProjects") {
+				event.preventDefault();
+				var hash = this.hash;
+				$('html,body').animate({
+					scrollTop: $(hash).offset().top
+				}, 800, function() {
+					window.location.hash = "#projects";
+				});
+				}
+			});
+		});
+
+	//add smooth scrolling to photography
+	$(document).ready(function() {
+		$("#goToPhotography").on('click', function(event) {
+			if(this.hash !== "#goToPhotography") {
+				event.preventDefault();
+				var hash = this.hash;
+				$('html,body').animate({
+					scrollTop: $(hash).offset().top
+				}, 800, function() {
+					window.location.hash = "#photography";
+				});
+				}
+			});
+		});
 	</script>
 	
 	<noscript>
@@ -110,7 +144,7 @@
 	</noscript>
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -118,8 +152,8 @@
 			</div>
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="index.html">Home</a></li>
-			<li><a href="#projects">Projects</a></li>
-			<li><a href="#photography">Photography</a></li>
+			<li><a href="#projects" id="goToProjects">Projects</a></li>
+			<li><a href="#photography" id="goToPhotography">Photography</a></li>
 			<!-- alternative portfolio 
 			<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Projects<span class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
@@ -153,6 +187,7 @@
 		  <p style="color: white">A good programmer looks both ways before crossing a one-way street.</p>
 		  <footer style="color: white">By Martin Golding</footer>
 		</blockquote>
+		<button id="overlay" class="btn btn-primary" style="margin-top: 160px;" onclick="location.href='https://www.linkedin.com/in/zeinkapadia/'">Hire Me</button>
 	</div>	
 
 	<div class="container text-center">
@@ -161,10 +196,10 @@
 		<p class="text-justify" style="font-family: Lato;">A developer by hobby and a tester by profession. I am passionate about building and designing web applcations. It all started on the eve of December, 22nd, 2016. I enrolled in an introductory course to HTML &amp; CSS produced by codecademy. I freshly remember typing my first line of code, "Hello World." Eight months later, I continue to self teach myself programming and in the process I have completed several courses covering topics such as: JavaScript, jQuery, bootstrap, SQL, selenium, command line and Git. I aim to  perfect and expand my skill set.</p>
 		<br>
 		<p class="text-justify" style="font-family: Lato;">
-		If you have any suggestions or would just like to chat, please reach out to me via clicking the 'Contact' button or social media.
+		If you have any suggestions or would just like to chat, please reach out to me via clicking the 'Contact' button, or any of the social media links.
 	</div>
 	
-	<div class="container-fluid text-center bg-style2">
+	<div class="container-fluid text-center bg-style3">
 	  <div class="page-header">
 		<h2 id="flip">SKILLS (click to view)</h2>
 	  </div>
@@ -204,7 +239,7 @@
 	</div>
 	
 
-	<div class="container-fluid text-center bg-style3">
+	<div class="container-fluid text-center bg-style2">
 	<div id="projects" style="margin-top: 30px;">
 	  <h2>PROJECTS</h2>
 	  <p style="font-family: lobster;">HIS WORK</p>
@@ -323,7 +358,7 @@
 	</div>
 	</div>
 <footer class="text-right">
-	<p style="font-size: 14px;color: black;">Written and coded by Zein Kap, 2017.</p>
+	<p style="font-size: 14px;color: white;">Written and coded by Zein Kap, 2017.</p>
 </footer>
 
   </div>
