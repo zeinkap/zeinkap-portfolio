@@ -60,14 +60,6 @@
 			font-weight: bold;
 			letter-spacing: 3px;
 		}
-		.bg-style1 { 
-      		background-color: #1abc9c; /* Teal */
-      		color: #ffffff;
-  		}
-  		.bg-style2 {
-  			background-color: #006699; /* blue */
-      		color: #ffffff;
-  		}
   		.bg-style3 {
   			background-color: #474e5d; /* Dark Blue */
   			color: #ffffff;
@@ -77,10 +69,9 @@
       		color: #fff;
   		}
   		.bg-photo {
-  			background-image: url("https://www.clipartsgram.com/image/668518014-abstraction-rose-design-ppt-backgrounds-powerpoint.jpg");
+  			background-image: url("http://www.hdwallpaperspulse.com/wp-content/uploads/2013/05/background-5-point.jpg");
   			background-repeat: no-repeat;
 			background-position: center;
-			background-size: cover;
   		}
 		#demo {
 			display: none;
@@ -93,6 +84,10 @@
 			width: 1200px;
 			height: 700px;
 			margin: auto;
+		}
+		.fixThis > .adjustImg > a > img {
+			width: 250px;
+			height: 250px;
 		}
 
 		.fa-facebook {
@@ -148,9 +143,15 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>  
+				</button>
 				<a class="navbar-brand" href="index.html">Zein Kap</a>
 			</div>
-		<ul class="nav navbar-nav">
+		<div class="collapse navbar-collapse" id="myNavbar">
+		  <ul class="nav navbar-nav">
 			<li class="active"><a href="index.html">Home</a></li>
 			<li><a href="#projects" id="goToProjects">Projects</a></li>
 			<li><a href="#photography" id="goToPhotography">Photography</a></li>
@@ -172,13 +173,15 @@
 			<li><a href="https://github.com/zeinkap" target="_blank"><i style="font-size:24px" class="fa">&#xf09b;</i> Github</a></li>
 			<li><a href="https://www.linkedin.com/in/zeinkapadia/" target="_blank"><i style="font-size:24px" class="fa">&#xf08c;</i> LinkedIn</a></li>
 			<li><a href="https://www.facebook.com/zein.kap" target="_blank" class="fa fa-facebook"> Facebook</a></li>
-		</ul>
+		  </ul>
+		</div>
+		</div>
 		<!-- sample login
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
 		</ul>
 		-->
-		</div>
+		
 	</nav>
 
 	<div class="container-fluid text-center cov-image">
@@ -239,47 +242,47 @@
 	</div>
 	
 
-	<div class="container-fluid text-center bg-style2">
+	<div class="container text-center">
 	<div id="projects" style="margin-top: 30px;">
-	  <h2>PROJECTS</h2>
+	  <h2><b>PROJECTS</b></h2>
 	  <p style="font-family: lobster;">HIS WORK</p>
 	</div>
 	  
-	<div class="row">
-		<div class="col-sm-4">
+	<div class="row fixThis">
+		<div class="col-sm-4 adjustImg">
 			<h3 id="game-8">8-ball</h3>
-			<a href="eight_ball.html" target="_blank"><img src="http://legomenon.com/images/magic-8ball-first-white.jpg" class="img-responsive" style="width:60%" alt="8-ball app"></a>
+			<a href="eight_ball.html" target="_blank"><img src="http://legomenon.com/images/magic-8ball-first-white.jpg" class="img-responsive" alt="8-ball app"></a>
 		</div>
-		<div class="col-sm-4">
+		<div class="col-sm-4 adjustImg">
 			<h3>Grade Converter</h3>
-			<a href="exam_grade.html" target="_blank"><img src="https://img.emg-services.net/HtmlPages/HtmlPage7100/grade-convert-tab-new.jpg" class="img-responsive" style="width:75%" alt="Grade converter app"></a>
+			<a href="exam_grade.html" target="_blank"><img src="https://img.emg-services.net/HtmlPages/HtmlPage7100/grade-convert-tab-new.jpg" class="img-responsive" alt="Grade converter app"></a>
 		</div>
-		<div class="col-sm-4">
+		<div class="col-sm-4 adjustImg">
 			<h3>R-P-S Game</h3>
-			<a href="rock_paper.html" target="_blank"><img src="https://www.dramafever.com/st/news/images/cheater1.jpg" class="img-responsive" style="width:60%" alt="Rock paper scissors game"></a>
+			<a href="rock_paper.html" target="_blank"><img src="https://www.dramafever.com/st/news/images/cheater1.jpg" class="img-responsive" alt="Rock paper scissors game"></a>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-sm-4">
+	<div class="row fixThis">
+		<div class="col-sm-4 adjustImg">
 			<h3>Sleep Debt Calculator</h3>
-			<a href="sleep_debt_calculator.html" target="_blank"><img src="http://lh3.googleusercontent.com/_Pn6kvo2-8xOBXHXE4QM6GuHBAvBRaVfSTrwWvjNqQHjs0qMx-WzV26mmXGE3igScD45=w300" class="img-responsive" style="width:60%" alt="Sleep Debt Calculator"></a>
+			<a href="sleep_debt_calculator.html" target="_blank"><img src="http://lh3.googleusercontent.com/_Pn6kvo2-8xOBXHXE4QM6GuHBAvBRaVfSTrwWvjNqQHjs0qMx-WzV26mmXGE3igScD45=w300" class="img-responsive" alt="Sleep Debt Calculator"></a>
 		</div>
-		<div class="col-sm-4">
+		<div class="col-sm-4 adjustImg">
 			<h3>2017 Calendar</h3>
-			<a href="calendar2.html" target="_blank"><img src="https://c.tadst.com/gfx/300h/calendar.png?1" class="img-responsive" style="width:60%" alt="Calendar-2017"></a>
+			<a href="calendar2.html" target="_blank"><img src="https://c.tadst.com/gfx/300h/calendar.png?1" class="img-responsive" alt="Calendar-2017"></a>
 		</div>
-		<div class="col-sm-4">
+		<div class="col-sm-4 adjustImg">
 			<h3>Job Listings</h3>
-			<a href="job_search_direc.html" target="_blank"><img src="http://www.milbanksd.com/wp-content/uploads/2015/01/job-search.jpg" class="img-responsive" style="width:60%" alt="NY Job Listings"></a>
+			<a href="job_search_direc.html" target="_blank"><img src="http://www.milbanksd.com/wp-content/uploads/2015/01/job-search.jpg" class="img-responsive" alt="NY Job Listings"></a>
 		</div>
 	</div>
-	
+	<br>
 	</div>	
 
   <div class="container-fluid bg-photo" id="photography">
 	<div class="container text-center">
 	<div style="margin-top: 30px;">
-		<h2><i style="font-size:24px" class="fa">&#xf030;</i> PHOTOGRAPHY <i style="font-size:24px" class="fa">&#xf030;</i></h2>
+		<h2><i style="font-size:24px" class="fa">&#xf030;</i> <b>PHOTOGRAPHY</b> <i style="font-size:24px" class="fa">&#xf030;</i></h2>
 		<p style="font-family: lobster;">Adventures of the Traveling Pants</p>
 	</div>
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -329,10 +332,10 @@
 			</div>
 		</div>
 		<div class="item">
-			<img src="nature1.JPG" alt="Hiking trail">
+			<img src="The_globe.jpg" alt="Hiking trail">
 			<div class="carousel-caption">
-				<h3>A friends-ly Outdoor Hike</h3>
-				<p>"That's a lot of 'bread' in Bangladesh."</p>
+				<h3>Flushing Meadows Park</h3>
+				<p>"Daddy, is the world round?"</p>
 			</div>
 		</div>
 		<div class="item">
@@ -393,10 +396,9 @@
 
 
 <script>
-	function youSent() {
+	//function youSent() {
 		window.alert("Your message has been sent.");
 	}
-
 </script>
 </body>
 </html>
