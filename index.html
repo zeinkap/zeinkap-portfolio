@@ -128,6 +128,20 @@
 				}
 			});
 		});
+	//add smooth scrolling to home
+	$(document).ready(function() {
+		$("#goHome").on('click', function(event) {
+			if(this.hash !== "#goHome") {
+				event.preventDefault();
+				var hash = this.hash;
+				$('html,body').animate({
+					scrollTop: $(hash).offset().top
+				}, 800, function() {
+					window.location.hash = "#home";
+				});
+				}
+			});
+		});
 	</script>
 	
 	<noscript>
@@ -148,7 +162,7 @@
 			</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 		  <ul class="nav navbar-nav">
-			<li class="active"><a href="index.html">Home</a></li>
+			<li><a href="#home" id="goHome">Home</a></li>
 			<li><a href="#projects" id="goToProjects">Projects</a></li>
 			<li><a href="#photography" id="goToPhotography">Photography</a></li>
 			<!-- alternative portfolio 
@@ -169,7 +183,8 @@
 			<li><a href="https://github.com/zeinkap" target="_blank"><i style="font-size:24px" class="fa">&#xf09b;</i> Github</a></li>
 			<li><a href="https://www.linkedin.com/in/zeinkapadia/" target="_blank"><i style="font-size:24px" class="fa">&#xf08c;</i> LinkedIn</a></li>
 			<li><a href="https://www.facebook.com/zein.kap" target="_blank" class="fa fa-facebook"> Facebook</a></li>
-		  </ul>
+		</ul>
+		  
 		</div>
 		</div>
 		<!-- sample login
@@ -177,25 +192,68 @@
 			<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
 		</ul>
 		-->
-		
 	</nav>
 
-	<div class="container-fluid text-center cov-image">
+	<div class="container-fluid text-center cov-image" id="home">
 		<h1 id="home-title">Journey of An Aspiring Developer</h1>
 		<blockquote class="blockquote-reverse" style="margin-top: 80px;">
 		  <p style="color: white">A good programmer looks both ways before crossing a one-way street.</p>
 		  <footer style="color: white">By Martin Golding</footer>
 		</blockquote>
-		<button class="btn btn-primary" style="margin-top: 140px;" onclick="location.href='https://www.linkedin.com/in/zeinkapadia/'">Hire Me</button>
+		
 	</div>	
+	
+	<div class="container-fluid text-right">
+		<button class="btn btn-info" data-toggle="modal" data-target="#myModal">Suggestion Box</button>
+				<!-- Modal -->
+			  <div class="modal fade" id="myModal" role="dialog">
+			    <div class="modal-dialog">
+			      <!-- Modal content-->
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <h4 class="modal-title text-center">Make a suggestion or comment</h4>
+			        </div>
+			        <div class="modal-body">
+			          <form action="/action_page.php">
+						<div class="form-group row">
+						  <div class="col-xs-4">
+							<label for="usr">Name:</label>
+							<input type="text" class="form-control" id="usr">
+						  </div>
+						  <div class="col-xs-4">
+							<label for="email">Email address:</label>
+							<input type="email" class="form-control" id="email">
+						  </div>
+						</div>
+
+						<div class="form-group">
+						  <div class="col-xs-12">
+							<label for="comment">Message:</label>
+							<textarea class="form-control" rows="5" id="msg"></textarea>
+						  </div>
+						</div>
+					  </form>
+			        </div>
+			        <div class="modal-footer">
+			          <button type="submit" class="btn btn-primary text-right" onclick="youSent()">Send</button>
+			          <button type="button" class="btn btn-warning text-left" data-dismiss="modal">Close</button>
+			        </div>
+			      </div>
+			      
+			    </div>
+			  </div>
+			
+	</div>
 
 	<div class="container text-center">
 		<h2 style="color: black"><span class="span1">Who</span> is He?</h2>
 		<h3 style="color: black">QA tester and Web Developer</h3>
-		<p class="text-justify" style="font-family: Lato;">A developer by hobby and a tester by profession. I am passionate about building and designing web applcations. It all started on the eve of December, 22nd, 2016. I enrolled in an introductory course to HTML &amp; CSS produced by codecademy. I freshly remember typing my first line of code, "Hello World." Eight months later, I continue to self teach myself programming and in the process I have completed several courses covering topics such as: JavaScript, jQuery, bootstrap, SQL, selenium, command line and Git. I aim to  perfect and expand my skill set.</p>
-		<br>
+		<p class="text-justify" style="font-family: Lato;">A developer by hobby and a tester by profession. I am passionate about building and designing web applcations. It all started on the eve of December, 22nd, 2016. I enrolled in an introductory course to HTML &amp; CSS produced by codecademy. I freshly remember typing my first line of code, "Hello World." Eight months later, I continue to self teach myself programming and in the process I have completed several courses covering topics such as: HTML &amp; CSS, javaScript, jQuery, bootstrap, python and many others. I aim to perfect and expand my skill set.</p>
 		<p class="text-justify" style="font-family: Lato;">
-		If you have any suggestions or would just like to chat, please reach out to me via clicking the 'Contact' button, or any of the social media links.
+		If you have any suggestions or would just like to chat, please reach out to me via clicking the 'Contact' button, 
+		or any of the social media links.
+		</p>
 	</div>
 	
 	<div class="container-fluid text-center bg-style3">
@@ -359,40 +417,10 @@
 <footer class="text-right">
 	<p style="font-size: 14px;color: white;">Written and coded by Zein Kap, 2017.</p>
 </footer>
-
   </div>
-	<!--
-	<div class="page-header" id="contact">
-		<a href="mailto:zeinkap@gmail.com?Subject=Hello%20again" target="_top"><h2 class="text-center"><u>Contact Zen-Master</u></h2></a>
-	</div>
-	<form>
-		<div class="form-group row">
-		  <div class="col-xs-2">
-			<label for="usr">Name:</label>
-			<input type="text" class="form-control input-sm" id="usr">
-		  </div>
-		</div>
-		<div class="form-group row">
-		  <div class="col-xs-2">
-			<label for="email">Email address:</label>
-			<input type="email" class="form-control input-sm" id="email">
-		  </div>
-		</div>
-		<div class="form-group row">
-		  <div class="col-xs-6">
-			<label for="comment">Message:</label>
-			<textarea class="form-control" rows="5" id="msg"></textarea>
-		  </div>
-		</div>
-		<button type="submit" class="btn btn-primary" onclick="youSent()">Send</button>
-	</form>
-	<br>
-	</div>
--->
-
 
 <script>
-	//function youSent() {
+	function youSent() {
 		window.alert("Your message has been sent.");
 	}
 </script>
