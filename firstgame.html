@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>2D Breakout Game</title>
+	<style type="text/css">
+		body {
+			background-color: grey;
+		}
+		canvas {
+			background-color: #eee;
+			display: block;
+			margin: 0 auto;
+		}
+		h1 {
+			text-align: center;
+			font-family: cursive;
+		}
+		#speedy {
+			float: right;
+			margin-right: 300px;
+			background-color: #4CAF50;
+			color: white;
+			text-transform: uppercase;
+			font-size: 16px;
+			cursor: pointer;
+			padding: 5px 10px;
+			display: inline-block;
+			text-align: center;
+			border: none;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>The 2D Breakout Game</h1>
+	<br>
+
+	<canvas id="myCanvas" width="600" height="400">
+	</canvas>
+
+	<script type="text/javascript">
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+		var x = canvas.width/2;
+		var y = canvas.height-30;
+		var dx = 3; //right direction
+		var dy = -3; //up direction
+		var ballRadius = 10;
+		var colorChange = "red";
+		//Add a paddle
+		var paddleHeight = 10;
+		var paddleWidth = 70;
+		var paddleX = (canvas.width-paddleWidth)/2; //This defines starting point of paddle on the x-axis
+
+		//Add keyboard keys
+		var rightPressed = false;
+		var leftPressed = false;
+		//Add bricks
+		var brickRowCount = 4;
+		var brickColumnCount = 5;
+		var brickWidth = 60;
+		var brickHeight = 20;
+		var brickPadding = 15;
+		var brickOffsetTop = 30;
+		var brickOffsetLeft = 30;
+		var score = 0;
+		var lives = 3;
+
+		var bricks = [];
+		for (c = 0; c < brickColumnCount; c++) {
+			bricks[c] = [];
+			for (r = 0; r < brickRowCount; r++) {
+				bricks[c][r] = {x: 0, y: 0, status: 1};
+			}
+		}
+
+		document.addEventListener("keydown", keyDownHandler, false);
+		document.addEventListener("keyup", keyUpHandler, false);
+		document.addEventListener("mousemove", mouseMoveHandler, false);
+
+		function keyDownHandler(e) {
+			if (e.keyCode == 39) {
+				rightPressed = true;
+			}
+			else if(e.keyCode == 37) {
+				leftPressed = true;
+			}
+		}
+
+		function keyUpHandler(e) {
+			if (e.keyCode == 39) {
+				rightPressed = false;
+			}
+			else if (e.keyCode == 37) {
+				leftPressed = false;
+			}
+		}
+		
+		function mouseMoveHandler(e) {
+			var relativeX = e.clientX - canvas.offsetLeft;
+			if (relativeX > 0 && relativeX < canvas.width) {
+				paddleX = relativeX - paddleWidth/2;
+			}
+		}
+
+		function drawBall() {
+			ctx.beginPath();
+			ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+			ctx.fillStyle = colorChange;
+			ctx.fill();
+			ctx.closePath();
+		}
+
+		function drawPaddle() {
+			ctx.beginPath();
+			ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
+			ctx.fillStyle = "#0095DD";
+			ctx.fill();
+			ctx.closePath();
+		}
+
+		function drawBricks() {
+			for (c = 0; c < brickColumnCount; c++) {
+				for (r = 0; r < brickRowCount; r++) {
+					//To position the bricks in different spots
+					if (bricks[c][r].status == 1) {
+						var brickX = (c*(brickWidth+brickPadding)) + brickOffsetLeft;
+						var brickY = (r*(brickHeight+brickPadding)) + brickOffsetTop;
+						bricks[c][r].x = brickX;
+						bricks[c][r].y = brickY;
+						ctx.beginPath();
+						ctx.rect(brickX, brickY, brickWidth, brickHeight);
+						ctx.fillStyle = "#0095DD";
+						ctx.fill();
+						ctx.closePath();
+					}
+				}
+			}
+		}
+
+		function collisionDetection() {
+			for (c = 0; c < brickColumnCount; c++) {
+				for (r = 0; r < brickRowCount; r++) {
+					var b = bricks[c][r];
+					if (b.status == 1) {
+						if (x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
+							dy = -dy;
+							b.status = 0;
+							score++;
+							if (score == brickRowCount*brickColumnCount) {
+								alert("YOU WIN, CONGRATS!");
+								document.location.reload();
+							}
+						}
+					}
+				}
+			}
+		}
+
+		function drawScore() {
+			ctx.font = "16px Arial";
+			ctx.fillStyle = "black";
+			ctx.fillText("Score: " + score, 8, 20);
+		}
+
+		function drawLives() {
+			ctx.font = "16px Arial";
+			ctx.fillStyle = "red";
+			ctx.fillText("Lives: " + lives, canvas.width-65, 20);
+		}
+		function draw() {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			drawBall();
+			drawPaddle();
+			drawBricks();
+			collisionDetection();
+			drawScore();
+			drawLives();
+			//To make ball bounce off top and bottom edge:
+			if(y + dy < ballRadius) {
+				dy = -dy;
+				colorChange = "#" + ((1 << 24) * Math.random() | 0).toString(16);
+			} else if (y + dy > canvas.height-ballRadius) {
+				if (x > paddleX && x < paddleX + paddleWidth) {
+					dy = -dy;
+				} else {
+				lives--;
+				if (!lives) {
+					alert("GAME OVER. YOUR SCORE: " + score);
+					document.location.reload();
+				}
+				else {
+					x = canvas.width/2;
+					y = canvas.height-30;
+					dx = 4;
+					dy = -4;
+					paddleX = (canvas.width-paddleWidth/2);
+				}
+				}
+			}
+			//To make ball bounce off left and right edge:
+			if(x + dx < ballRadius || x + dx > canvas.width-ballRadius) {
+				dx = -dx;
+				colorChange = "#" + ((1 << 24) * Math.random() | 0).toString(16);
+			}
+			if (rightPressed && paddleX < canvas.width-paddleWidth) {
+				paddleX += 7;
+			}
+			else if (leftPressed && paddleX > 0) {
+				paddleX -=7;
+			}
+
+			x += dx;
+			y += dy;
+			requestAnimationFrame(draw)
+		}
+
+
+		//setInterval(draw, 10); instead add smoother graphic
+		draw();
+
+	</script>
+	<br>
+	<button id="speedy" onclick="draw()">Increase Velocity</button>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<footer style="text-align: center;">Created &amp; Designed by Zein Kap.</footer>
+</body>
+</html>
