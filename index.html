@@ -3,13 +3,13 @@
 <head>
 	<title>Zein Kap's Portfolio</title>
 	<meta charset="utf-8">
-	<!--To give responsiveness to mobile devices-->
+	<!--To size to mobile device-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--Bootstrap library-->
+	<!--Bootstrap CSS library-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!--fa fa library -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!--jQuery library-->
+	<!--Bootstrap js / jQuery library-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -50,6 +50,9 @@
 		p {
 			font-size: 18px;
 		}
+		input, textarea {
+			max-width: 100%;
+		}
 		.span1 {
 			text-transform: uppercase;
 			font-family: orbitron;
@@ -75,10 +78,8 @@
 		#flip {
 			cursor: pointer;
 		}
-
 		.carousel-inner > .item > img {
-			width: 1200px;
-			height: 700px;
+			max-width: 100%;
 			margin: auto;
 		}
 		.fixThis > .adjustImg > a > img {
@@ -204,35 +205,36 @@
 	
 	<div class="container-fluid text-right">
 		<button class="btn btn-info" data-toggle="modal" data-target="#myModal">Suggestion Box</button>
+				
 				<!-- Modal -->
 			  <div class="modal fade" id="myModal" role="dialog">
 			    <div class="modal-dialog">
+
 			      <!-- Modal content-->
 			      <div class="modal-content">
 			        <div class="modal-header">
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
-			          <h4 class="modal-title text-center">Make a suggestion or comment</h4>
+			          <h4 class="modal-title text-center">Leave A Message</h4>
 			        </div>
 			        <div class="modal-body">
-			          <form action="/action_page.php">
-						<div class="form-group row">
-						  <div class="col-xs-4">
+			          <form class="form-inline" action="/action_page.php">
+						<div class="form-group">
 							<label for="usr">Name:</label>
 							<input type="text" class="form-control" id="usr">
-						  </div>
-						  <div class="col-xs-4">
+						</div>
+						<div class="form-group">
 							<label for="email">Email address:</label>
 							<input type="email" class="form-control" id="email">
-						  </div>
-						</div>
-
-						<div class="form-group">
-						  <div class="col-xs-12">
-							<label for="comment">Message:</label>
-							<textarea class="form-control" rows="5" id="msg"></textarea>
-						  </div>
 						</div>
 					  </form>
+					  <br>
+					  <form action="/action_page.php">
+						<div class="form-group">
+							<label for="comment" style="float:left;">Message:</label>
+							<textarea class="form-control" rows="5" id="comment"></textarea>
+						</div>
+					  </form>
+
 			        </div>
 			        <div class="modal-footer">
 			          <button type="submit" class="btn btn-primary text-right" onclick="youSent()">Send</button>
@@ -340,7 +342,7 @@
 		</div>
 		<div class="col-sm-4 adjustImg">
 			<h3>Pocket Calculator</h3>
-			<a href="udemy_calculator.html" target="_blank"><img src="calc.PNG" class="img-responsive" alt="Pocket Calculator"></a>
+			<a href="udemy_calculator.html" target="_blank"><img src="calc.png" class="img-responsive" alt="Pocket Calculator"></a>
 		</div>
 
 	  </div>
@@ -436,7 +438,8 @@
 
 <script>
 	function youSent() {
-		window.alert("Your message has been sent.");
+		window.alert("Thank you.");
+		location.reload();
 	}
 </script>
 </body>
