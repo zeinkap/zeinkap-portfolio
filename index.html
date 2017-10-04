@@ -233,7 +233,7 @@
 	</div>
 
 	<div class="container text-center">
-		<h2 style="color: black"><span class="span1">Who</span> is He?</h2>
+		<h2 style="color: black"><span class="span1" id="showWho">Who</span> is He?</h2>
 		<h3 style="color: black">QA tester and Web Developer</h3>
 		<p class="text-justify" style="font-family: Lato;">A developer by hobby and a tester by profession. I am passionate about building and designing web applications. It all started on the eve of December, 22nd, 2016. I enrolled in an introductory course to HTML &amp; CSS produced by codecademy. I freshly remember typing my first line of code, "Hello World." Eight months later, I continue to self teach myself programming. I have completed several courses covering topics such as: HTML &amp; CSS, javaScript, jQuery, bootstrap, python and many others. I aim to perfect and expand my skill set.</p>
 		<p class="text-justify" style="font-family: Lato;">
@@ -431,6 +431,10 @@
 		window.alert("Thank you.");
 		location.reload();
 	}
+	var showRealMe = document.getElementById('showWho');
+	showRealMe.onclick = function() {
+		alert('Puny human, you dare ask my identification?!');
+	};
 </script>
 </body>
 </html>
