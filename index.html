@@ -34,7 +34,7 @@
 		}
 		#home-title {
 			color: white;
-			font-family: lobster;
+			font-family: "lobster", sans-serif;
 			font-size: 60px;
 			margin-top: 120px;
 			text-shadow: 2px 2px #ff0000;
@@ -52,9 +52,52 @@
 		input, textarea {
 			max-width: 100%;
 		}
+		.whoInfo {
+			text-align: justify;
+			font-family: "Lato", sans-serif;
+		}
+		#social_div1 {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			margin-top: 10px;
+		}
+		#social_div2 {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			margin-top: 10px;
+		}
+		#social_div3 {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			margin-top: 10px;
+		}
+		.tooltip {
+		    position: relative;
+		    display: inline-block;
+		    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+		}
+		.tooltip .tooltiptext {
+			visibility: hidden;
+			width: 120px;
+			background-color: red;
+			color: white;
+			text-align: center;
+			padding: 5px 0;
+			border-radius: 6px;
+
+			/* Position the tooltip text - see examples below! */
+			position: absolute;
+			z-index: 1;
+		}
+		.tooltip:hover .tooltiptext {
+    		visibility: visible;
+		}
 		.span1 {
 			text-transform: uppercase;
-			font-family: orbitron;
+			font-family: "orbitron", sans-serif;
 			font-weight: bold;
 			letter-spacing: 3px;
 		}
@@ -106,7 +149,7 @@
 				var hash = this.hash;
 				$('html,body').animate({
 					scrollTop: $(hash).offset().top
-				}, 800, function() {
+				}, 700, function() {
 					window.location.hash = "#projects";
 				});
 				}
@@ -120,7 +163,7 @@
 				var hash = this.hash;
 				$('html,body').animate({
 					scrollTop: $(hash).offset().top
-				}, 800, function() {
+				}, 700, function() {
 					window.location.hash = "#photography";
 				});
 				}
@@ -134,12 +177,18 @@
 				var hash = this.hash;
 				$('html,body').animate({
 					scrollTop: $(hash).offset().top
-				}, 800, function() {
+				}, 700, function() {
 					window.location.hash = "#home";
 				});
 				}
 			});
 		});
+
+	//Enable Tooltip
+	$(document).ready(function(){
+    	$('[data-toggle="tooltip"]').tooltip(); 
+	});
+
 	</script>
 	
 	<noscript>
@@ -164,11 +213,17 @@
 			<li><a href="#projects" id="goToProjects">Projects</a></li>
 			<li><a href="#photography" id="goToPhotography">Photography</a></li>
 			<li><a href="resume.html" target="_blank">Resume</a></li>
-			<li><a href="mailto:zeinkap@gmail.com?Subject=Hello%20again">Contact</a></li>
-			<li><a href="https://github.com/zeinkap" target="_blank"><i style="font-size:22px" class="fa">&#xf09b;</i></a></li>
-			<li><a href="https://www.linkedin.com/in/zeinkapadia/" target="_blank"><i style="font-size:22px" class="fa">&#xf08c;</i></a></li>
-			<li><a href="https://www.facebook.com/zein.kap" target="_blank" class="fa fa-facebook"></a></li>
-		</ul>
+		  
+			<li><a href="https://github.com/zeinkap" data-toggle="tooltip" data-placement="bottom" title="GitHub" target="_blank">
+				<i style="font-size:22px" class="fa">&#xf09b;</i></a>
+			</li>
+			<li><a href="https://www.linkedin.com/in/zeinkapadia/" data-toggle="tooltip" data-placement="bottom" title="LinkedIn" target="_blank">
+				<i style="font-size:22px" class="fa">&#xf08c;</i></a>
+			</li>
+			<li><a href="https://www.facebook.com/zein.kap" data-toggle="tooltip" data-placement="bottom" title="Facebook" 
+				target="_blank" class="fa fa-facebook"></a>
+			</li>
+		  </ul>
 		  
 		</div>
 		</div>
@@ -188,14 +243,14 @@
 		
 	</div>	
 	
-	<div class="container-fluid text-right">
+	<!-- <div class="container-fluid text-right">
 		<button class="btn btn-info" data-toggle="modal" data-target="#myModal">Suggestion Box</button>
 				
-				<!-- Modal -->
+				
 			  <div class="modal fade" id="myModal" role="dialog">
 			    <div class="modal-dialog">
 
-			      <!-- Modal content-->
+			      
 			      <div class="modal-content">
 			        <div class="modal-header">
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -230,21 +285,24 @@
 			    </div>
 			  </div>
 			
-	</div>
-
+	</div> -->
+    
 	<div class="container text-center">
 		<h2 style="color: black"><span class="span1" id="showWho">Who</span> is He?</h2>
-		<h3 style="color: black">QA tester and Web Developer</h3>
-		<p class="text-justify" style="font-family: Lato;">A developer by hobby and a tester by profession. I am passionate about building and designing web applications. It all started on the eve of December, 22nd, 2016. I enrolled in an introductory course to HTML &amp; CSS produced by codecademy. I freshly remember typing my first line of code, "Hello World." Eight months later, I continue to self teach myself programming. I have completed several courses covering topics such as: HTML &amp; CSS, javaScript, jQuery, bootstrap, python and many others. I aim to perfect and expand my skill set.</p>
-		<p class="text-justify" style="font-family: Lato;">
-		If you have any suggestions or would like to chat; please reach out to me via clicking the 'Contact' button, 
-		or any of the social media links.
+		<h3 style="color: black">Web Developer and Software Tester</h3>
+		
+		<p class="whoInfo">Hi, I'm Zein. I am a 23-year old, college graduate, who lives in the city that never sleeps, New York!</p>
+		
+		<p class="whoInfo">I am an aspiring web developer who is endlessly improving his programming skills. I became interested in coding after taking an introductory course to HTML &amp; CSS by codecademy. I freshly remember typing my first line of code, "Hello World." Fast forward to now, I am still hooked on programming. I love being able to watch a project come together and enjoy the challenge of solving problems.</p>
+		
+		<p class="whoInfo">
+		If you would like to connect with me, please click the appropriate social media link provided in the navigation bar.
 		</p>
 	</div>
 	
 	<div class="container-fluid text-center bg-style3">
 	  <div class="page-header">
-		<h2 id="flip">SKILLS (click to view)</h2>
+		<h2 id="flip" data-toggle="tooltip" data-placement="bottom" title="Click to view">SKILLS</h2>
 	  </div>
 	  <!-- Add another skill set section for QA -->
 	  	<div class="container text-center" id="demo">
@@ -305,7 +363,7 @@
 		</div>
 		<div class="col-sm-4 adjustImg">
 			<h3>R-P-S Game</h3>
-			<a href="rock_paper.html" target="_blank"><img src="https://www.dramafever.com/st/news/images/cheater1.jpg" class="img-responsive" alt="Rock paper scissors game"></a>
+			<a href="rock_paper.html" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Rock Paper Scissor Game"><img src="https://www.dramafever.com/st/news/images/cheater1.jpg" class="img-responsive" alt="Rock paper scissors game"></a>
 		</div>
 	</div>
 	<br>
